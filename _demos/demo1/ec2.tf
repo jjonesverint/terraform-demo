@@ -27,13 +27,13 @@ resource "aws_instance" "example" {
   tags = merge(
     local.common_tags,
     {
-      "Name" = "Example-Server-01"
+      "Name" = "Example-Server-${var.random}"
     },
   )
   volume_tags = merge(
     local.common_tags,
     {
-      "Name" = "Example-Server-01"
+      "Name" = "Example-Server-${var.random}"
     },
   )
 

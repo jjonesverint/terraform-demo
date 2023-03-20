@@ -15,3 +15,10 @@ locals {
 variable "env" { default = "prod" }
 
 variable "region" { default = "us-east-2" }
+
+resource "random_string" "random" {
+  length  = 4
+  special = false
+  number  = false
+  upper   = false
+}

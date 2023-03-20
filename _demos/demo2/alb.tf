@@ -1,7 +1,7 @@
 # Security group for Application alb. Open 80/443 inbound but only 443 outbound
 resource "aws_security_group" "sg_alb-app" {
-  name        = "sg_alb-app"
-  description = "sg_alb-app"
+  name        = "sg_alb-app-${var.random}"
+  description = "sg_alb-app-${var.random}"
   vpc_id      = data.terraform_remote_state.vpc.outputs.vpc_id
 
   ingress {
@@ -29,7 +29,7 @@ resource "aws_security_group" "sg_alb-app" {
 
 # Create an ALB
 resource "aws_lb" "alb_app" {
-  name                       = "alb-app"
+  name                       = "alb-app-${var.random}"
   internal                   = true
   idle_timeout               = 3600
   load_balancer_type         = "application"
@@ -38,7 +38,7 @@ resource "aws_lb" "alb_app" {
   subnets                    = [data.terraform_remote_state.vpc.outputs.subnet1, data.terraform_remote_state.vpc.outputs.subnet2]
 
   tags = {
-    "Name" = "alb_app"
+    "Name" = "alb_app-${var.random}"
   }
 
 
