@@ -1,0 +1,8 @@
+terraform.tfvars
+*.plan
+*.terraform*
+*.out
+*_certs*
+*.com.json
+*.tfstate*
+plan.txt

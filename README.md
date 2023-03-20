@@ -21,6 +21,8 @@ Go to the project directory
   cd terraform-demo
 ```
 
+Go into one of the subdirectories under _demos
+
 Initiatilize and apply Terraform
 
 ```bash
