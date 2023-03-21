@@ -5,5 +5,5 @@ output "ec2_id" {
 
 output "random" {
   description = "Random value"
-  value       = random_string.random.id
+  value       = random_string.random.result
 }
